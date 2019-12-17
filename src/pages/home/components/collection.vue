@@ -1,5 +1,10 @@
 <template>
-  <div>
+  <div class="collection_warp">
+    <div class="row">
+      <div class="col-md-12">公益集锦</div>
+      <span class="bottom_red"></span>
+    </div>
+
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       <!-- 指示器 -->
       <ol class="carousel-indicators">
@@ -26,93 +31,77 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-    <div class="project_tj row">
-      <div class="col-md-3">
-        <p>50,000,000 元</p>
-        <p>累计接收捐赠资金</p>
-        <span class="borderRight"></span>
-      </div>
-      <div class="col-md-3">
-        <p>100 项</p>
-        <p>累计开展公益项目</p>
-        <span class="borderRight"></span>
-      </div>
-      <div class="col-md-3">
-        <p>100,000 人次</p>
-        <p>受益人次</p>
-        <span class="borderRight"></span>
-      </div>
-      <div class="col-md-3">
-        <p>60,000,000 元</p>
-        <p>累计公益支出</p>
-        <span class="borderRight"></span>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-    }
+  data() {
+    return {};
   },
   mounted () {
     $('#carousel-example-generic').carousel({
       interval: 1500 // in milliseconds
     })
   }
-}
+};
 </script>
 
 <style scoped>
-#carousel-example-generic {
-  margin-top: 100px;
-  width: 100%;
+.collection_warp {
+  padding: 0;
+  width: 1200px;
+  margin: 0 auto;
+  border-bottom: 1px solid #ebebeb;
 }
-ul,li{
-  list-style: none;
+.col-md-12 {
+  font-size: 28px;
+  color: #333;
 }
-.project_tj > div{
-  height: 95px;
+.collection_warp .row .col-md-12 {
+  padding-bottom: 8px;
 }
-.col-md-3 {
-  text-align: center;
+.collection_warp .row {
   position: relative;
 }
-.borderRight {
-  width: 1px;
-  height: 46px;
-  background: #efefef;
+.bottom_red {
+  width: 36px;
+  height: 2px;
+  background: #e1181b;
   position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  left: 14px;
+  bottom: 0;
 }
-.col-md-3 > p:nth-child(1) {
-  color: #d0171a;
-  font-size: 28px;
-  margin: 22px 0 11px 0;
-  line-height: 1;
-}
-.col-md-3 > p:nth-child(2) {
-  color: #666666;
-  font-size: 20px;
-  line-height: 1;
-}
+/* pc的时候 */
 @media (min-width: 768px) {
-  .project_tj {
+  .gundong_warp {
     width: 1200px;
     margin: 0 auto;
-    position: relative;
-    top: -32px;
-    box-shadow:0 0 6px  #e7e7e7;
-    background: #fff;
+  }
+  .gundong_row {
+    width: 1096px;
+    margin: 0 auto;
+  }
+  .gundong_row_item {
+    width: 25%;
+    float: left;
   }
 }
+/* mobile的时候 */
 @media (max-width: 768px) {
-  .project_tj {
-    display: none;
+  .gundong_warp {
+    width: 100%;
+    overflow: hidden;
+  }
+  .gundong_row {
+    width: 100%;
+  }
+  .gundong_row_item {
+    width: 100%;
+    float: left;
+  }
+  .gundong_row_item img {
+    width: 100%;
   }
 }
 </style>
