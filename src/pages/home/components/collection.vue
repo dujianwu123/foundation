@@ -5,46 +5,52 @@
       <span class="bottom_red"></span>
     </div>
 
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <div id="carousel-example-generic2" class="carousel slide" data-ride="carousel">
       <!-- 指示器 -->
       <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic2" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic2" data-slide-to="1"></li>
       </ol>
       <!-- 轮播图片及说明文字 -->
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img class="img-responsive" width="100%" src="../../../assets/images/banner1.jpg" />
+      <div class="carousel-inner clearfix" role="listbox">
+        <div style="float: left;" class="item active">
+          <img class="img-responsive" width="100%" src="../../../assets/images/jj1.jpg" />
         </div>
-        <div class="item">
-          <img class="img-responsive" width="100%" src="../../../assets/images/banner1.jpg" />
+        <div style="float: left;" class="item">
+          <img class="img-responsive" width="100%" src="../../../assets/images/jj2.jpg" />
+        </div>
+        <div style="float: left;" class="item">
+          <img class="img-responsive" width="100%" src="../../../assets/images/jj3.jpg" />
+        </div>
+        <div style="float: left;" class="item">
+          <img class="img-responsive" width="100%" src="../../../assets/images/jj4.jpg" />
         </div>
       </div>
 
       <!-- 控制按钮：左右切换 -->
-      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <!-- <a class="left carousel-control" href="#carousel-example-generic2" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <a class="right carousel-control" href="#carousel-example-generic2" role="button" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
-      </a>
+      </a> -->
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {};
+  data () {
+    return {}
   },
   mounted () {
-    $('#carousel-example-generic').carousel({
+    $('#carousel-example-generic2').carousel({
       interval: 1500 // in milliseconds
     })
   }
-};
+}
 </script>
 
 <style scoped>
@@ -74,6 +80,10 @@ export default {
 }
 /* pc的时候 */
 @media (min-width: 768px) {
+  .item {
+    width: 25%;
+    float: left;
+  }
   .gundong_warp {
     width: 1200px;
     margin: 0 auto;
@@ -89,6 +99,9 @@ export default {
 }
 /* mobile的时候 */
 @media (max-width: 768px) {
+  .collection_warp {
+    width: 100%;
+  }
   .gundong_warp {
     width: 100%;
     overflow: hidden;

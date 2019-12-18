@@ -257,10 +257,10 @@ export default {
   background: #fff;
 }
 #daohang a:hover {
-  color: #8d1d2d;
+  color: #c20f12;
 }
 .cur {
-  color: #8d1d2d !important;
+  color: #c20f12 !important;
 }
 .navbar-toggle {
   margin-top: 28px;
