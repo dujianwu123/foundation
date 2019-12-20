@@ -21,7 +21,6 @@
             <img src="../../../assets/images/jj4.jpg" />
           </swiper-slide>
           <!-- Optional controls -->
-          
         </swiper>
         <div class="swiper-button-prev" slot="button-prev"></div>
         <div class="swiper-button-next" slot="button-next"></div>
@@ -44,8 +43,8 @@ export default {
         slidesPerView: 4,
         // slideToClickedSlide: true,
         navigation: {
-          nextEl: ".swiper-button-prev",
-          prevEl: ".swiper-button-next"
+          nextEl: '.swiper-button-prev',
+          prevEl: '.swiper-button-next'
         }
       }
     }
@@ -63,9 +62,7 @@ export default {
   mounted () {
     // current swiper instance
     // 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
-    console.log("this is current swiper instance object", this.swiper)
     // this.swiper.slideTo(3, 1000, false);
-    console.log(this.swiper.navigation.$nextEl)
   }
 }
 </script>
