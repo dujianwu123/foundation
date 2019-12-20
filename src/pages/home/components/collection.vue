@@ -1,41 +1,31 @@
 <template>
-  <div class="collection_warp">
-    <div class="row">
-      <div class="col-md-12">公益集锦</div>
-      <span class="bottom_red"></span>
-    </div>
-
-    <div id="carousel-example-generic2" class="carousel slide" data-ride="carousel">
-      <!-- 指示器 -->
-      <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic2" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic2" data-slide-to="1"></li>
-      </ol>
-      <!-- 轮播图片及说明文字 -->
-      <div class="carousel-inner clearfix" role="listbox">
-        <div style="float: left;" class="item active">
-          <img class="img-responsive" width="100%" src="../../../assets/images/jj1.jpg" />
-        </div>
-        <div style="float: left;" class="item">
-          <img class="img-responsive" width="100%" src="../../../assets/images/jj2.jpg" />
-        </div>
-        <div style="float: left;" class="item">
-          <img class="img-responsive" width="100%" src="../../../assets/images/jj3.jpg" />
-        </div>
-        <div style="float: left;" class="item">
-          <img class="img-responsive" width="100%" src="../../../assets/images/jj4.jpg" />
-        </div>
+  <div class="jijin_warp">
+    <h3>
+      公益集锦
+      <span></span>
+    </h3>
+    <div class="jijin_lunbo_warp">
+      <div class="swiper_warp">
+        <swiper :options="swiperOption" ref="mySwiper">
+          <!-- slides -->
+          <swiper-slide>
+            <img src="../../../assets/images/jj1.jpg" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="../../../assets/images/jj2.jpg" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="../../../assets/images/jj3.jpg" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="../../../assets/images/jj4.jpg" />
+          </swiper-slide>
+          <!-- Optional controls -->
+          
+        </swiper>
+        <div class="swiper-button-prev" slot="button-prev"></div>
+        <div class="swiper-button-next" slot="button-next"></div>
       </div>
-
-      <!-- 控制按钮：左右切换 -->
-      <!-- <a class="left carousel-control" href="#carousel-example-generic2" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic2" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a> -->
     </div>
   </div>
 </template>
@@ -43,77 +33,106 @@
 <script>
 export default {
   data () {
-    return {}
+    return {
+      swiperOption: {
+        autoplay: {
+          delay: 2000,
+          stopOnLastSlide: false /* 触摸滑动后是否继续轮播 */,
+          disableOnInteraction: false
+        },
+        loop: true,
+        slidesPerView: 4,
+        // slideToClickedSlide: true,
+        navigation: {
+          nextEl: ".swiper-button-prev",
+          prevEl: ".swiper-button-next"
+        }
+      }
+    }
+  },
+  created () {
+    if (document.documentElement.clientWidth < 768) {
+      this.swiperOption.slidesPerView = 1
+    }
+  },
+  computed: {
+    swiper () {
+      return this.$refs.mySwiper.swiper
+    }
   },
   mounted () {
-    $('#carousel-example-generic2').carousel({
-      interval: 1500 // in milliseconds
-    })
+    // current swiper instance
+    // 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
+    console.log("this is current swiper instance object", this.swiper)
+    // this.swiper.slideTo(3, 1000, false);
+    console.log(this.swiper.navigation.$nextEl)
   }
 }
 </script>
 
 <style scoped>
-.collection_warp {
-  padding: 0;
+.jijin_warp {
   width: 1200px;
   margin: 0 auto;
-  border-bottom: 1px solid #ebebeb;
+  /* background: red; */
 }
-.col-md-12 {
+.jijin_warp h3 {
+  width: 100%;
   font-size: 28px;
   color: #333;
-}
-.collection_warp .row .col-md-12 {
-  padding-bottom: 8px;
-}
-.collection_warp .row {
+  line-height: 1;
+  border-bottom: 1px solid #ebebeb;
+  padding-bottom: 15px;
   position: relative;
+  margin-bottom: 32px;
 }
-.bottom_red {
+.jijin_warp h3 > span {
+  position: absolute;
+  bottom: 1px;
+  left: 0;
   width: 36px;
   height: 2px;
   background: #e1181b;
-  position: absolute;
-  left: 14px;
-  bottom: 0;
 }
-/* pc的时候 */
-@media (min-width: 768px) {
-  .item {
-    width: 25%;
-    float: left;
-  }
-  .gundong_warp {
-    width: 1200px;
-    margin: 0 auto;
-  }
-  .gundong_row {
-    width: 1096px;
-    margin: 0 auto;
-  }
-  .gundong_row_item {
-    width: 25%;
-    float: left;
-  }
+
+.jijin_lunbo_warp {
+  width: 100%;
+  margin-bottom: 1000px;
+}
+.swiper_warp {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 56px;
+  position: relative;
+}
+
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+  position: absolute;
+  top: 50%;
+  width: 27px;
+  height: 44px;
+  margin-top: -22px;
+  z-index: 10;
+  cursor: pointer;
+  background-size: 27px 44px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.swiper-button-prev {
+  background-image: url('~@/assets/images/left.jpg');
+}
+.swiper-button-next {
+  background-image: url('~@/assets/images/right.jpg');
+}
+div:focus {
+    outline: none;
 }
 /* mobile的时候 */
 @media (max-width: 768px) {
-  .collection_warp {
+  .jijin_warp {
     width: 100%;
   }
-  .gundong_warp {
-    width: 100%;
-    overflow: hidden;
-  }
-  .gundong_row {
-    width: 100%;
-  }
-  .gundong_row_item {
-    width: 100%;
-    float: left;
-  }
-  .gundong_row_item img {
+  .swiper_warp {
     width: 100%;
   }
 }

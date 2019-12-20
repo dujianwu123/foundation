@@ -292,7 +292,7 @@ export default {
     margin-top: 18px;
   }
   .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
-    margin-left: 0;
+    margin-left: -26px;
   }
   .navbar-nav > li {
     height: 80px;
