@@ -69,19 +69,20 @@ export default {
 
 <style scoped>
 .jijin_warp {
-  width: 1200px;
+  width: 1170px;
   margin: 0 auto;
   /* background: red; */
 }
 .jijin_warp h3 {
   width: 100%;
-  font-size: 28px;
+  font-size: 24px;
   color: #333;
   line-height: 1;
   border-bottom: 1px solid #ebebeb;
   padding-bottom: 15px;
   position: relative;
   margin-bottom: 32px;
+  /* margin-left: 15px; */
 }
 .jijin_warp h3 > span {
   position: absolute;
@@ -94,7 +95,7 @@ export default {
 
 .jijin_lunbo_warp {
   width: 100%;
-  margin-bottom: 1000px;
+  margin-bottom: 33px;
 }
 .swiper_warp {
   width: 1200px;

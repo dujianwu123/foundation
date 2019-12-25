@@ -3,18 +3,27 @@
       <Nav/>
       <Banner />
       <Collection />
+      <Notice/>
+      <Cooperative/>
+      <Footer/>
     </div>
 </template>
 
 <script>
 import Nav from '../../common/Nav'
 import Banner from './components/banner'
-import Collection from './components/Collection'
+import Collection from './components/collection'
+import Notice from './components/notice'
+import Cooperative from './components/cooperative'
+import Footer from '../../common/Footer'
 export default {
   components: {
     Nav,
     Banner,
-    Collection
+    Collection,
+    Notice,
+    Cooperative,
+    Footer
   }
 }
 </script>
