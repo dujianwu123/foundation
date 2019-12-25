@@ -128,7 +128,7 @@ div:focus {
 /* mobile的时候 */
 @media (max-width: 768px) {
   .jijin_warp {
-    width: 100%;
+    width: calc(100vw - 30px);
   }
   .swiper_warp {
     width: 100%;
