@@ -1,9 +1,10 @@
 <template>
     <div>
       <Nav/>
-      <Banner />
-      <Collection />
+      <Banner/>
+      <Collection/>
       <Notice/>
+      <Charity/>
       <Cooperative/>
       <Footer/>
     </div>
@@ -14,6 +15,7 @@ import Nav from '../../common/Nav'
 import Banner from './components/banner'
 import Collection from './components/collection'
 import Notice from './components/notice'
+import Charity from './components/charity'
 import Cooperative from './components/cooperative'
 import Footer from '../../common/Footer'
 export default {
@@ -22,6 +24,7 @@ export default {
     Banner,
     Collection,
     Notice,
+    Charity,
     Cooperative,
     Footer
   }

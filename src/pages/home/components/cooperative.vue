@@ -61,7 +61,7 @@ export default {
     /* padding: 0 15px; */
   }
   h3{
-    font-size: 27px;
+    font-size: 24px;
     padding-bottom: 14px;
     border-bottom: 1px solid #ebebeb;
     position: relative;

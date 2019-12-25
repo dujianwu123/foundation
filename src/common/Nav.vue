@@ -307,6 +307,9 @@ export default {
     height: 40px;
     line-height: 20px;
   }
+  li.dropdown{
+    border-bottom: 1px solid #ebebeb;
+  }
 }
 .open>a { background: #fff !important }
 </style>

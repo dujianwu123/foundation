@@ -8,7 +8,9 @@
       </h3>
       <ul class="tongzhi_list">
         <li class="clearfix">
-          <p class="notice_f_l w_80">2019年北京耘泽公益基金会取得非营利组织免</p>
+          <p class="notice_f_l w_80">
+            <router-link to="/">2019年北京耘泽公益基金会取得非营利组织免</router-link>
+          </p>
           <p class="notice_f_r w_20">2019-08-20</p>
         </li>
         <li class="clearfix">
