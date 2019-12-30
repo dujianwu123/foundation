@@ -1,6 +1,6 @@
 <template>
   <div class="projects">
-    <h3>慈善项目</h3>
+    <!-- <h3>慈善项目</h3> -->
     <p>当前位置：首页 >> 慈善项目</p>
     <ul>
       <li class="clearfix">
@@ -83,10 +83,10 @@ ul,li{
   background: #f5f5f5;
   margin-bottom: 30px;
 }
-h3 {
+/* h3 {
   font-size: 16px;
   color: #c20f12;
-}
+} */
 .l_img {
   float: left;
   font-size: 18px;
