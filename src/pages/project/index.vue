@@ -16,7 +16,6 @@ export default {
   data () {
     return {
       sidebar: [
-        {content: '慈善项目', active: true},
         {content: '大爱同行', active: false},
         {content: '助养计划', active: false},
         {content: '病患救助', active: false},
