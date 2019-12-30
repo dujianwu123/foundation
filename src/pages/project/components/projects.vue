@@ -20,7 +20,7 @@
       <li class="clearfix">
         <div class="l_img">
           <img src="../../../assets/images/list.jpg" alt="">
-          <p>大爱同行</p>
+          <p>助养计划</p>
         </div>
         <div class="l_text">
           <h4>累计开展项目20次，受益人次4000人</h4>
@@ -34,7 +34,7 @@
       <li class="clearfix">
         <div class="l_img">
           <img src="../../../assets/images/list.jpg" alt="">
-          <p>大爱同行</p>
+          <p>病患救助</p>
         </div>
         <div class="l_text">
           <h4>累计开展项目20次，受益人次4000人</h4>
@@ -48,7 +48,7 @@
       <li class="clearfix">
         <div class="l_img">
           <img src="../../../assets/images/list.jpg" alt="">
-          <p>大爱同行</p>
+          <p>扶贫济困</p>
         </div>
         <div class="l_text">
           <h4>累计开展项目20次，受益人次4000人</h4>
@@ -124,5 +124,18 @@ h3 {
   color: #000000;
 }
 @media (max-width: 768px) {
+  .projects{
+    width: 100%;
+  }
+  img{
+    width: 100%;
+  }
+  .l_text h4{
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .l_text {
+    display: none;
+  }
 }
 </style>
