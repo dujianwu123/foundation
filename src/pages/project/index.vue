@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Nav></Nav>
+    <Nav :nav_name="'慈善项目'"></Nav>
     <Banner></Banner>
     <Content :sidebar='sidebar'></Content>
     <Footer></Footer>
@@ -9,7 +9,7 @@
 
 <script>
 import Nav from '../../common/Nav'
-import Banner from './components/banner'
+import Banner from '../../common/Banner'
 import Content from './components/content'
 import Footer from '../../common/Footer'
 export default {

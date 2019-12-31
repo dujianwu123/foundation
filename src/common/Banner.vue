@@ -1,6 +1,6 @@
 <template>
   <div class="banner_warp">
-    <img src="../../../assets/images/banner1.jpg" alt="">
+    <img src="../assets/images/banner1.jpg" alt="">
   </div>
 </template>
 

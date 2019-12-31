@@ -16,11 +16,10 @@
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a
-              class="cur"
               href="javascript:;"
-              v-change_nav
+              vname="首页"
             >
-              首页
+              <router-link tag="span" to="/">首页</router-link>
             </a>
           </li>
           <li class="dropdown">
@@ -31,9 +30,9 @@
               role="button"
               aria-haspopup="true"
               aria-expanded="false"
-              v-change_nav
+              vname="关于耘泽"
             >
-              关于耘泽
+              <router-link tag="span" to="/about">关于耘泽</router-link>
               <span class="underline"></span>
             </a>
             <ul class="dropdown-menu">
@@ -57,9 +56,9 @@
               role="button"
               aria-haspopup="true"
               aria-expanded="false"
-              v-change_nav
+              vname="慈善项目"
             >
-              慈善项目
+              <router-link tag="span" to="/project">慈善项目</router-link>
               <span class="underline"></span>
             </a>
             <ul class="dropdown-menu">
@@ -79,9 +78,9 @@
               role="button"
               aria-haspopup="true"
               aria-expanded="false"
-              v-change_nav
+              vname="新闻资讯"
             >
-              新闻资讯
+              <router-link tag="span" to="/news">新闻资讯</router-link>
               <span class="underline"></span>
             </a>
             <ul class="dropdown-menu">
@@ -99,9 +98,9 @@
               role="button"
               aria-haspopup="true"
               aria-expanded="false"
-              v-change_nav
+              vname="通知公告"
             >
-              通知公告
+              <router-link tag="span" to="/notice">通知公告</router-link>
               <span class="underline"></span>
             </a>
             <!-- <ul class="dropdown-menu">
@@ -123,9 +122,9 @@
               role="button"
               aria-haspopup="true"
               aria-expanded="false"
-              v-change_nav
+              vname="信息公开"
             >
-              信息公开
+              <router-link tag="span" to="/info">信息公开</router-link>
               <span class="underline"></span>
             </a>
             <ul class="dropdown-menu">
@@ -147,9 +146,9 @@
               role="button"
               aria-haspopup="true"
               aria-expanded="false"
-              v-change_nav
+              vname="政策法规"
             >
-              政策法规
+              <router-link tag="span" to="/politics">政策法规</router-link>
               <span class="underline"></span>
             </a>
             <ul class="dropdown-menu">
@@ -167,9 +166,9 @@
               role="button"
               aria-haspopup="true"
               aria-expanded="false"
-              v-change_nav
+              vname="支持我们"
             >
-              支持我们
+              <router-link tag="span" to="/support">支持我们</router-link>
               <span class="underline"></span>
             </a>
             <ul class="dropdown-menu">
@@ -205,16 +204,18 @@ export default {
     $('.dropdown').mouseleave(function () {
       $(this).removeClass('open')
     })
-  },
-  directives: {
-    change_nav (el, bindings, vnode) {
-      el.onclick = function () {
-        let objs = document.querySelectorAll('#daohang>ul>li>a')
-        objs.forEach(item => {
-          item.className = ''
-        })
-        this.className = 'cur'
+
+    let oA = document.querySelectorAll('.dropdown>a')
+    oA.forEach(obj => {
+      if (obj.getAttribute('vname') === this.nav_name) {
+        obj.className = obj.className + ' cur'
       }
+    })
+  },
+  props: {
+    nav_name: {
+      type: String,
+      default: ''
     }
   }
 }

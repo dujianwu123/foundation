@@ -1,6 +1,6 @@
 <template>
     <div>
-      <Nav/>
+      <Nav :nav_name="'首页'"/>
       <Banner/>
       <Collection/>
       <Notice/>

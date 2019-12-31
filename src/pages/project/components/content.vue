@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Sidebar from './sidebar'
+import Sidebar from '../../../common/Sidebar'
 import Projects from './projects'
 
 export default {
