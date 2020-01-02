@@ -1,62 +1,73 @@
 <template>
   <div class="sidebar_warp">
+    <h4>{{title}}</h4>
     <ul>
-      <li class="sidebar_title">慈善项目</li>
-      <li
-        v-for="(item,index) in sidebar"
+      <!-- <li :class="{active_sidebar:item.active}">
+      </li> -->
+      <router-link
+        v-for="(item,index) in sidebars"
         :key="index"
-        class="sidebar_li"
-        :class="{active:item.active}"
-      >{{item.content}}</li>
+        :to="item.url"
+        :class="{active_sidebar: item.active}"
+        tag="li"
+      >
+        {{item.title}}
+      </router-link>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['sidebar'],
-  data () {
-    return {}
-  }
+  props: ['sidebars', 'title']
 }
 </script>
 
 <style scoped>
-.sidebar_warp {
+ul,li,h4{
+  margin: 0;padding: 0;
 }
-ul,
-li {
+ul,li{
   list-style: none;
-  margin: 0;
-  padding: 0;
-  cursor: pointer;
 }
-.sidebar_warp ul {
-  margin-left: 10px;
-  margin-top: 60px;
+.sidebar_warp {
+
 }
-.sidebar_warp ul li {
+.sidebar_warp h4 {
+  width: 200px;
+  height: 40px;
+  margin: 0 auto;
+  line-height: 40px;
+  font-size: 16px;
+  text-align: center;
+  background: #fff;
+  color: #c20f12;
+  margin-top: 10px;
+  margin-bottom: 18px;
+}
+ul {
+  width: 200px;
+  margin: 0 auto;
+}
+li {
   width: 200px;
   height: 50px;
+  line-height: 50px;
+  text-align: center;
   background: #f4f4f4;
   margin-bottom: 10px;
-  font-size: 16px;
-  color: #333333;
-  text-align: center;
-  line-height: 50px;
+  cursor: pointer;
 }
-.sidebar_li:hover {
-  color: #c20f12 !important;
+li:hover {
+  background: #c20f12;
+  color: #fff;
 }
-.active {
-  color: #c20f12 !important;
+.active_sidebar {
+  background: #c20f12;
+  color: #fff;
 }
-.sidebar_title {
-  color: #c20f12 !important;
-}
-@media (max-width: 768px) {
-  .sidebar_warp ul li {
-    width: 100%;
-  }
+li.router-link-exact-active {
+  background: #c20f12;
+  color: #fff;
 }
 </style>

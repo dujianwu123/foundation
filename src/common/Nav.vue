@@ -58,16 +58,20 @@
               aria-expanded="false"
               vname="慈善项目"
             >
-              <router-link tag="span" to="/project">慈善项目</router-link>
+              <router-link tag="span" to="/project/list/1">慈善项目</router-link>
               <span class="underline"></span>
             </a>
             <ul class="dropdown-menu">
-              <li><a
-                  href="javascript:;">大爱同行</a></li>
-              <li><a
-                  href="javascript:;">助养计划</a></li>
-              <li><a
-                  href="javascript:;">病患救助</a></li>
+              <li>
+                <router-link to="/Project/list/1" tag="a">大爱同行</router-link>
+              <li>
+                <router-link to="/Project/list/2" tag="a">助养计划</router-link>
+              <li>
+                <router-link to="/Project/list/3" tag="a">病患救助</router-link>
+              </li>
+              <li>
+                <router-link to="/Project/list/4" tag="a">扶贫济困</router-link>
+              </li>
             </ul>
           </li>
           <li class="dropdown">

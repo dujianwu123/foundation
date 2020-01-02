@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/home/index.vue'
 import Project from '@/pages/project/index.vue'
-
 Vue.use(Router)
 
 export default new Router({
@@ -15,7 +14,19 @@ export default new Router({
     {
       path: '/project',
       name: 'Project',
-      component: Project
+      component: Project, // 只要路径带这个project，不管后面子级是什么，都会在Project这个组件内的路由守卫监听到
+      children: [
+        {
+          path: 'list/:id',
+          name: 'list',
+          component: () => import('../pages/project/components/list.vue'),
+        },
+        {
+          path: 'detail/:id/:bid',
+          name: 'detail',
+          component: () => import('../pages/project/components/detail.vue')
+        }
+      ]
     },
     {
       path: '/about',
